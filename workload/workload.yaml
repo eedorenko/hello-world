@@ -4,32 +4,71 @@ metadata:
   name: hello-world-app
   labels:
     type: application
-    family: force
 spec:
   deploymentTargets:
-    - name: functional-test
+    - name: functional-test-dev-gray-east-us
       labels:
         purpose: functional-test
-        edge: "true"
+        location: east-us
+        zone: gray
       environment: dev
       manifests:
-        repo: https://github.com/microsoft/kalypso-app-gitops
-        branch: dev
-        path: ./functional-test
-    - name: performance-test
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: dev-gray
+        path: ./functional-test/east-us
+    - name: functional-test-dev-gray-eu
       labels:
-        purpose: performance-test
-        edge: "false"
+        purpose: functional-test
+        location: eu
+        zone: gray
       environment: dev
       manifests:
-        repo: https://github.com/microsoft/kalypso-app-gitops
-        branch: dev
-        path: ./performance-test
-    - name: uat-test
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: dev-gray
+        path: ./functional-test/eu
+    - name: functional-test-dev-green
+      labels:
+        purpose: functional-test
+        zone: green
+      environment: dev
+      manifests:
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: dev-green
+        path: ./functional-test
+    - name: functional-test-dev-red
+      labels:
+        purpose: functional-test
+        zone: red
+      environment: dev
+      manifests:
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: dev-red
+        path: ./functional-test
+    
+    - name: uat-test-stage-gray
       labels:
         purpose: uat-test
+        zone: gray
       environment: stage
       manifests:
-        repo: https://github.com/microsoft/kalypso-app-gitops
-        branch: stage
-        path: ./uat-test                 
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: stage-gray
+        path: ./uat-test
+    - name: uat-test-stage-green
+      labels:
+        purpose: uat-test
+        zone: green
+      environment: stage
+      manifests:
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: stage-green
+        path: ./uat-test
+    - name: uat-test-stage-red
+      labels:
+        purpose: uat-test
+        zone: red
+      environment: stage
+      manifests:
+        repo: https://github.com/eedorenko/hello-world-gitops
+        branch: stage-red
+        path: ./uat-test              
