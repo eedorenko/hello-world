@@ -131,6 +131,7 @@ error "$total_compliant_configs out of $total_configs configurations are complia
 
 }
 
+REPO_BRANCH=$(echo $REPO_BRANCH | cut -d'-' -f1)
 check_parameters
 wait_for_deployment
 
