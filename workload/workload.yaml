@@ -16,16 +16,16 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-gray
         path: ./functional-test/east-us
-    - name: functional-test-dev-gray-eu
+    - name: functional-test-dev-gray-west-us
       labels:
         purpose: functional-test
-        location: eu
+        location: west-us
         zone: gray
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-gray
-        path: ./functional-test/eu
+        path: ./functional-test/west-us
     - name: functional-test-dev-green
       labels:
         purpose: functional-test
