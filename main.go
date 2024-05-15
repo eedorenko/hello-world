@@ -13,6 +13,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<div>in <b>%s</b> region</div>", os.Getenv("REGION"))
 	fmt.Fprintf(w, "<div>at <b>%s</b> environment</div>", os.Getenv("ENVIRONMENT"))
 	fmt.Fprintf(w, "<div>getting data from <b>%s</b> database</div>", os.Getenv("DATABASE_URL"))
+	
 }
 
 func main() {
