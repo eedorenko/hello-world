@@ -19,7 +19,7 @@ spec:
     manifests:
         repo: https://github.com/$GITOPS_REPO
         branch: $ENVIRONMENT
-        path: $DEPLOYMENT_TARGET
+        path: $DEPLOYMENT_TARGET_MANIFESTS_PATH
   workloadVersion:
     version: $VERSION
     commit: $SRC_COMMIT    
