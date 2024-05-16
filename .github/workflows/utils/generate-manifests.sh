@@ -68,9 +68,10 @@ for dir in `find . -type d \( ! -name . \)`; do
 
         # Generate deployment descriptor
         deployment_target=$(echo $manifests_dir | rev | cut -d'/' -f1 | rev)
+        deployment_target_path=$manifests_dir
         
         mkdir -p $manifests_dir/descriptor
-        $GITHUB_WORKSPACE/.github/workflows/utils/generate-deployment-descriptor.sh  $deployment_target $manifests_dir/descriptor/$deployment_descriptor_file_name $GITHUB_WORKSPACE/$deployment_descriptor_template
+        $GITHUB_WORKSPACE/.github/workflows/utils/generate-deployment-descriptor.sh  $deployment_target $deployment_target_path $manifests_dir/descriptor/$deployment_descriptor_file_name $GITHUB_WORKSPACE/$deployment_descriptor_template
 
         rm $manifests_dir/$values_file_name
     fi
