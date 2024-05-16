@@ -8,7 +8,7 @@ spec:
   deploymentTargets:
     - name: functional-test-dev-gray-east-us
       labels:
-        purpose: functional-test
+        purpose: functional-test-east-us
         location: east-us
         zone: gray
       environment: dev
@@ -18,8 +18,8 @@ spec:
         path: ./functional-test/east-us
     - name: functional-test-dev-gray-west-us
       labels:
-        purpose: functional-test
-        location: west-us
+        purpose: functional-test-west-us
+        location: west-us        
         zone: gray
       environment: dev
       manifests:
