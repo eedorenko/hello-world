@@ -47,8 +47,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-red
-        path: ./functional-test
-    
+        path: ./functional-test    
     - name: uat-test-stage-gray
       labels:
         purpose: uat-test
