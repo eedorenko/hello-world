@@ -11,6 +11,7 @@ spec:
         purpose: functional-test
         location: east-us
         zone: gray
+        application: hello-world
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -21,6 +22,7 @@ spec:
         purpose: functional-test
         location: west-us
         zone: gray
+        application: hello-world
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -30,6 +32,7 @@ spec:
       labels:
         purpose: functional-test
         zone: green
+        application: hello-world
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -39,6 +42,7 @@ spec:
       labels:
         purpose: functional-test
         zone: red
+        application: hello-world
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -49,6 +53,7 @@ spec:
       labels:
         purpose: uat-test
         zone: gray
+        application: hello-world
       environment: stage
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -58,6 +63,7 @@ spec:
       labels:
         purpose: uat-test
         zone: green
+        application: hello-world
       environment: stage
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
@@ -67,6 +73,7 @@ spec:
       labels:
         purpose: uat-test
         zone: red
+        application: hello-world
       environment: stage
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
