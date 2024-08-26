@@ -6,9 +6,9 @@ metadata:
     type: application
 spec:
   deploymentTargets:
-    - name: functional-test-dev-gray-east-us
+    - name: functional-test-dev-gray
       labels:
-        purpose: functional-test-east-us
+        purpose: functional-test
         location: east-us
         zone: gray
         application: hello-world
@@ -16,18 +16,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-gray
-        path: ./functional-test/east-us
-    - name: functional-test-dev-gray-west-us
-      labels:
-        purpose: functional-test-west-us
-        location: west-us        
-        zone: gray
-        application: hello-world
-      environment: dev
-      manifests:
-        repo: https://github.com/eedorenko/hello-world-gitops
-        branch: dev-gray
-        path: ./functional-test/west-us
+        path: ./functional-test
     - name: functional-test-dev-green
       labels:
         purpose: functional-test
