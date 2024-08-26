@@ -9,7 +9,6 @@ spec:
     - name: functional-test-dev-gray
       labels:
         purpose: functional-test
-        location: east-us
         zone: gray
         application: hello-world
       environment: dev
