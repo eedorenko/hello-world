@@ -15,7 +15,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-gray
-        path: ./functional-test
+        path: ./hw
     - name: dev-green
       labels:
         purpose: functional-test
@@ -25,7 +25,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-green
-        path: ./functional-test
+        path: ./hw
     - name: dev-red
       labels:
         purpose: functional-test
@@ -35,7 +35,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-red
-        path: ./functional-test    
+        path: ./hw    
     - name: stage-gray
       labels:
         purpose: uat-test
@@ -45,7 +45,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage-gray
-        path: ./uat-test
+        path: ./hw
     - name: stage-green
       labels:
         purpose: uat-test
@@ -55,7 +55,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage-green
-        path: ./uat-test
+        path: ./hw
     - name: stage-red
       labels:
         purpose: uat-test
@@ -65,4 +65,4 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage-red
-        path: ./uat-test              
+        path: ./hw             
