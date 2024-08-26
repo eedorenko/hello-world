@@ -6,7 +6,7 @@ metadata:
     type: application
 spec:
   deploymentTargets:
-    - name: functional-test-dev-gray
+    - name: dev-gray
       labels:
         purpose: functional-test
         zone: gray
@@ -16,7 +16,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-gray
         path: ./functional-test
-    - name: functional-test-dev-green
+    - name: dev-green
       labels:
         purpose: functional-test
         zone: green
@@ -26,7 +26,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-green
         path: ./functional-test
-    - name: functional-test-dev-red
+    - name: dev-red
       labels:
         purpose: functional-test
         zone: red
@@ -36,7 +36,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev-red
         path: ./functional-test    
-    - name: uat-test-stage-gray
+    - name: stage-gray
       labels:
         purpose: uat-test
         zone: gray
@@ -46,7 +46,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage-gray
         path: ./uat-test
-    - name: uat-test-stage-green
+    - name: stage-green
       labels:
         purpose: uat-test
         zone: green
@@ -56,7 +56,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage-green
         path: ./uat-test
-    - name: uat-test-stage-red
+    - name: stage-red
       labels:
         purpose: uat-test
         zone: red
