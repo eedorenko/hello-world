@@ -1,4 +1,4 @@
-name: Ensure Plant Chat UI
+name: Ensure Versions
 
 on:
   pull_request:
@@ -6,10 +6,19 @@ on:
 
 
 jobs:
-  ensure:
+  ensure-ui:
     runs-on: ubuntu-latest
     permissions: write-all
-    name: Ensure Plant Chat UI
+    name: Ensure Plant Chat UI 1.1.0-6.dev
+
+    steps:
+    - name: Checkout Source
+      uses: actions/checkout@v3
+  
+  ensure-api:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: Ensure Plant Chat API 1.0.1-5.dev
 
     steps:
     - name: Checkout Source
