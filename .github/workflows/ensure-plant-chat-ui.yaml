@@ -6,9 +6,10 @@ on:
 
 
 jobs:
-  Build_Push_Image:
+  ensure-plant-chat-ui:
     runs-on: ubuntu-latest
     permissions: write-all
+    name: Ensure Plant Chat UI
 
     steps:
     - name: Checkout Source
