@@ -1,7 +1,7 @@
 name: Ensure Plant Chat UI
 
 on:
-  pr:
+  pull_request:
     branches: ["main"]
 
 
