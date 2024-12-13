@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  ensure-plant-chat-ui:
+  ensure:
     runs-on: ubuntu-latest
     permissions: write-all
     name: Ensure Plant Chat UI
