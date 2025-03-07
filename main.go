@@ -9,7 +9,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hello there!</h1>")
-	fmt.Fprintf(w, "<div>I am working on <b>%s</b> cluster</div>", os.Getenv("CLUSTER_NAME"))
+	fmt.Fprintf(w, "<div>I am working hard on <b>%s</b> cluster</div>", os.Getenv("CLUSTER_NAME"))
 	fmt.Fprintf(w, "<div>in <b>%s</b> region</div>", os.Getenv("REGION"))
 	fmt.Fprintf(w, "<div>at <b>%s</b> environment</div>", os.Getenv("ENVIRONMENT"))
 	fmt.Fprintf(w, "<div>getting data from <b>%s</b> database</div>", os.Getenv("DATABASE_URL"))
