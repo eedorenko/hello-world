@@ -1,7 +1,7 @@
 apiVersion: hub.kalypso.io/v1alpha1
 kind: DeploymentDescriptor
 metadata:
-  name: $WORKLOAD-$DEPLOYMENT_TARGET
+  name: $DEPLOYMENT_TARGET-$ENVIRONMENT
 spec:
   workload:
     name: hw
@@ -14,7 +14,7 @@ spec:
         workspace:
             name: kaizen-team
   deploymentTarget:
-    name: $DEPLOYMENT_TARGET
+    name: $DEPLOYMENT_TARGET-$ENVIRONMENT
     environment: $ENVIRONMENT
     manifests:
         repo: https://github.com/$GITOPS_REPO
