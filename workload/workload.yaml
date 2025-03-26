@@ -23,7 +23,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage
-        path: ./func
+        path: ./hw-func
     - name: perf
       labels:
         purpose: performance-test
@@ -32,7 +32,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage
-        path: ./perf
+        path: ./hw-perf
     - name: prod-gray
       labels:
         purpose: prod
