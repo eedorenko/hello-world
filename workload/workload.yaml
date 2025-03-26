@@ -6,75 +6,55 @@ metadata:
     type: application
 spec:
   deploymentTargets:
-    - name: functional-test-dev-gray-east-us
+    - name: dev
       labels:
-        purpose: functional-test-east-us
-        location: east-us
-        zone: gray
+        purpose: dev-test
         application: hello-world
       environment: dev
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: dev-gray
-        path: ./functional-test/east-us
-    - name: functional-test-dev-gray-west-us
-      labels:
-        purpose: functional-test-west-us
-        location: west-us        
-        zone: gray
-        application: hello-world
-      environment: dev
-      manifests:
-        repo: https://github.com/eedorenko/hello-world-gitops
-        branch: dev-gray
-        path: ./functional-test/west-us
-    - name: functional-test-dev-green
+        branch: dev
+        path: ./hw
+    - name: functional-test-stage
       labels:
         purpose: functional-test
-        zone: green
         application: hello-world
-      environment: dev
+      environment: stage
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: dev-green
-        path: ./functional-test
-    - name: functional-test-dev-red
+        branch: stage
+        path: ./functional
+    - name: performance-test-stage
       labels:
-        purpose: functional-test
-        zone: red
+        purpose: performance-test
         application: hello-world
-      environment: dev
+      environment: stage
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: dev-red
-        path: ./functional-test    
-    - name: uat-test-stage-gray
+        branch: stage
+        path: ./performance
+    - name: prod-gray
       labels:
-        purpose: uat-test
+        purpose: prod
         zone: gray
-        application: hello-world
-      environment: stage
+      environment: prod
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: stage-gray
-        path: ./uat-test
-    - name: uat-test-stage-green
+        branch: prod-gray
+        path: ./hw
+    - name: prod-green
       labels:
-        purpose: uat-test
+        purpose: prod
         zone: green
-        application: hello-world
-      environment: stage
+      environment: prod
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: stage-green
-        path: ./uat-test
-    - name: uat-test-stage-red
+        branch: prod-green
+    - name: prod-red
       labels:
-        purpose: uat-test
+        purpose: prod
         zone: red
-        application: hello-world
-      environment: stage
+      environment: prod
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
-        branch: stage-red
-        path: ./uat-test              
+        branch: prod-red
