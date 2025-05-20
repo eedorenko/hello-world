@@ -15,7 +15,7 @@ spec:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: dev
         path: ./hw
-    - name: functional-test-stage
+    - name: func-stage
       labels:
         purpose: functional-test
         application: hello-world
@@ -23,8 +23,8 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage
-        path: ./functional
-    - name: performance-test-stage
+        path: ./hw-func
+    - name: perf-stage
       labels:
         purpose: performance-test
         application: hello-world
@@ -32,7 +32,7 @@ spec:
       manifests:
         repo: https://github.com/eedorenko/hello-world-gitops
         branch: stage
-        path: ./performance
+        path: ./hw-perf
     - name: prod-gray
       labels:
         purpose: prod
