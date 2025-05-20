@@ -38,7 +38,8 @@ for dir in `find . -type d \( ! -name . \)`; do
     # All values.yaml files in the path to the leaf folder are merged into one values.yaml
     if [ -z "$(find $dir -mindepth 1 -type d \( ! -name . \))" ] && [ -f $dir/$values_file_name ]; then
         manifests_dir=$GENERATED_MANIFESTS_FOLDER/$dir
-        mkdir -p $manifests_dir   
+        mkdir -p $manifests_dir
+        
         path=$dir
         while [[ $path != $FOLDER_WITH_CONFIGS ]];
         do                      
@@ -51,7 +52,7 @@ for dir in `find . -type d \( ! -name . \)`; do
             path="$(readlink -f "$path"/..)"
         done
         # Generate manifests out of helm chart
-        envsubst <"$manifests_dir/$values_file_name" > "$manifests_dir/$values_file_name"1 && mv "$manifests_dir/$values_file_name"1 "$manifests_dir/$values_file_name"
+        envsubst <"$manifests_dir/$values_file_name" > "$manifests_dir/$values_file_name"1 && mv "$manifests_dir/$values_file_name"1 "$manifests_dir/$values_file_name"        
         helm template "$FOLDER_WITH_MANIFESTS" -f $manifests_dir/$values_file_name > $manifests_dir/$gen_manifests_file_name && \
         cat $manifests_dir/$gen_manifests_file_name
         if [ $? -gt 0 ]
@@ -59,6 +60,9 @@ for dir in `find . -type d \( ! -name . \)`; do
             echo "Could not render manifests"
             exit 1
         fi
+        
+        mkdir -p $manifests_dir/helm
+        cp  -r $FOLDER_WITH_MANIFESTS/. $manifests_dir/helm/.  
 
         pushd $manifests_dir 
         
