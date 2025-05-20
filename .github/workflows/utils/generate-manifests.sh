@@ -63,13 +63,13 @@ for dir in `find . -type d \( ! -name . \)`; do
         
         mkdir -p $manifests_dir/helm
         cp  -r $FOLDER_WITH_MANIFESTS/. $manifests_dir/helm/.
-        cp  $manifests_dir/$values_file_name  $manifests_dir/helm/.
-        helm package $manifests_dir/helm
+        cp  $manifests_dir/$values_file_name  $manifests_dir/helm/.        
 
         pushd $manifests_dir 
         
         # Generate kustomization.yaml
         kustomize create --autodetect
+        helm package helm
         popd
 
         # extract deployment target like "/home/runner/work/hello-world/hello-world/manifests/./functional-test/east-us" -> "functional-test-east-us" but "/home/runner/work/hello-world/hello-world/manifests/./functional-test" -> "functional-test"
